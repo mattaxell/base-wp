@@ -57,6 +57,9 @@ if ( $theme_config['remove_unwanted_menu_items'] === true ) {
 
 }
 
+// Disable theme editor
+// ============================================== //
+
 if ( $theme_config['enable_theme_editor'] === false ) {
 
     function remove_editor_menu() {
