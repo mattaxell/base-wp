@@ -18,7 +18,6 @@ if ( $theme_config['enable_custom_menu'] === true ) {
     function register_my_menu() {
         register_nav_menu( 'main-nav', 'Main Navigation' );
     }
-
     add_action( 'init', 'register_my_menu' );
 
 }
@@ -54,7 +53,15 @@ if ( $theme_config['remove_unwanted_menu_items'] === true ) {
         remove_menu_page('edit-comments.php');
         remove_menu_page('upload.php');
     }
-
     add_action( 'admin_menu', 'remove_menu_pages' );
+
+}
+
+if ( $theme_config['enable_theme_editor'] === false ) {
+
+    function remove_editor_menu() {
+        remove_action('admin_menu', '_add_themes_utility_last', 101);
+    }
+    add_action('_admin_menu', 'remove_editor_menu', 1);
 
 }
