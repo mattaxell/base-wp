@@ -7,12 +7,15 @@ node_modules
 # composer
 /vendor
 
-#theme
-public/*
+# assets
+/public/styles
+/public/js
+/public/img
+/public/cache
 
 # generic
 .DS_Store
 .sass-cache
 *.sublime*
-
+_deploy
 !.gitkeep
