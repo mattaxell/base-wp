@@ -1,0 +1,42 @@
+<?php
+
+// Hide ACF field group menu item
+// add_filter('acf/settings/show_admin', '__return_false');
+
+// Include ACF
+// include_once( get_stylesheet_directory() . '/app/acf/plugin/acf.php' );
+
+/*
+* Set path to save local JSON files
+*/
+function acf_json_dir($path) {
+    $path = get_stylesheet_directory() . '/app/acf/fields';
+    return $path;
+}
+
+add_filter('acf/settings/save_json', 'acf_json_dir');
+
+/**
+ * Setup ACF options pages
+ * Add custom icon for option pages
+ */
+if( function_exists('acf_add_options_page') ) {
+
+    acf_add_options_page(array(
+        'page_title'    => 'Site Options',
+        'menu_title'    => 'Site Options',
+        'menu_slug'     => 'site-options',
+        'capability'    => 'edit_posts',
+        'icon_url'      => 'dashicons-screenoptions',
+        'redirect'      => true,
+        'position'      => '4'
+    ));
+
+    // Sub Pages
+    // acf_add_options_sub_page(array(
+    //     'page_title'  => 'General Info',
+    //     'menu_title'  => 'General Info',
+    //     'parent_slug' => 'site-options'
+    // ));
+
+}
