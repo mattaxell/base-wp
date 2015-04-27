@@ -7,6 +7,7 @@ include_once('app/_config.php');
 include_once('app/lib/wp-setup.php');
 include_once('app/lib/helpers.php');
 include_once('app/lib/clean-nav.php');
+include_once('app/lib/admin-menu.php');
 include_once('app/lib/custom-editor-styles.php');
 include_once('app/lib/custom-excerpts.php');
 include_once('app/lib/custom-login.php');
