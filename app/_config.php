@@ -17,6 +17,6 @@ $theme_config = array(
 );
 
 // Define constants
-define('THEME', '/wp-content/themes/tannwestlake');
+define('THEME', '/wp-content/themes/base-wp');
 define('IMG', THEME . '/public/img');
 define('JS', THEME . '/public/js');
