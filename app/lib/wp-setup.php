@@ -48,20 +48,6 @@ if ( $theme_config['enable_admin_bar'] === false ) {
 }
 
 /**
- * Remove unused WP Menu items
- * ===========================
- * Comments hidden from menu by default
- * Hide additional items with remove_menu_page()
- */
-if ( $theme_config['remove_unwanted_menu_items'] === true ) {
-    function remove_menu_pages() {
-        remove_menu_page('edit-comments.php');
-        // remove_menu_page('upload.php');
-    }
-    add_action( 'admin_menu', 'remove_menu_pages' );
-}
-
-/**
  * Disable theme editor
  * ====================
  * Prevent user from editing the theme in the admin area
