@@ -12,6 +12,7 @@ include_once('app/lib/custom-editor-styles.php');
 include_once('app/lib/custom-excerpts.php');
 include_once('app/lib/custom-login.php');
 include_once('app/lib/editor.php');
+include_once('app/lib/media.php');
 
 // ACF
 include_once('app/acf/acf-config.php');
