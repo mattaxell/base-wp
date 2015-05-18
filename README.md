@@ -16,6 +16,12 @@ No styling or markup (except basic page elements in header / footer); just initi
     - Custom excerpts
     - Pagination (coming soon)
 
+###### Media
+- Set default insert media options
+    - Remove link to attachment by default
+    - Update default size to large
+- Update 'large' image size to 1500px wide, unlimited height
+
 ###### Advanced Custom Fields
 
 Built with use of ACF Pro in mind:
