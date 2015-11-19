@@ -7,8 +7,6 @@
         <meta http-equiv="X-UA-Compatible" content="IE=edge">
         <meta name="viewport" content="width=device-width, initial-scale=1">
 
-        <title><?php wp_title('&bull;', true, right); ?></title>
-
         <!-- Icons -->
         <link rel="shortcut icon" href="<?php print IMG . '/icons/favicon.ico'; ?>">
         <link rel="icon" sizes="16x16 32x32 64x64" href="<?php print IMG; ?>/icons/favicon.ico">
