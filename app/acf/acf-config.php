@@ -1,26 +1,30 @@
 <?php
 
-// Hide ACF field group menu item
-// add_filter('acf/settings/show_admin', '__return_false');
-
-// Include ACF
-// include_once( get_stylesheet_directory() . '/app/acf/plugin/acf.php' );
-
-/*
-* Set path to save local JSON files
+/**
+* Set local directory to save JSON files to
 */
-function acf_json_dir($path) {
+function acf_local_save_dir($path) {
     $path = get_stylesheet_directory() . '/app/acf/fields';
     return $path;
 }
 
-add_filter('acf/settings/save_json', 'acf_json_dir');
+add_filter('acf/settings/save_json', 'acf_local_save_dir');
+
+/**
+ * Set local directory to load JSON files from
+ */
+function acf_local_local_dir( $paths ) {
+    unset($paths[0]);
+    $paths[] = get_stylesheet_directory() . '/app/acf/fields';
+    return $paths;
+}
+
+add_filter('acf/settings/load_json', 'acf_local_local_dir');
 
 /**
  * Setup ACF options pages
- * Add custom icon for option pages
  */
-if( function_exists('acf_add_options_page') ) {
+if(function_exists('acf_add_options_page')) {
 
     acf_add_options_page(array(
         'page_title'    => 'Site Options',
