@@ -1,5 +1,9 @@
 <?php
 
+/**
+ * Include shortcut icons in head
+ * @return str links to icons
+ */
 function site_shortcut_icons() {
     echo '<link rel="shortcut icon" href="' . IMG . '/icons/favicon.ico">';
     echo '<link rel="icon" sizes="16x16 32x32 64x64" href="' . IMG . '/icons/favicon.ico">';
