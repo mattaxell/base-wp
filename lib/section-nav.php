@@ -1,0 +1,50 @@
+<?php
+
+/**
+ * Output an unordered list of either
+ * the current page's children or siblings
+ * @param  string $class Class name for ul, default 'section-nav'
+ * @return mixed        The list including items
+ */
+function section_navigation($class = 'section-nav') {
+
+    global $post;
+
+    // Better name for the current page
+    $current_page = $post->ID;
+    // Check to see if page has a parent
+    $parent_page = $post->post_parent;
+    // Get current page's children (if any)
+    $page_children = get_pages('child_of=' . $current_page);
+    // Check if page has children
+    $has_children = count($page_children) !=0;
+    // Get the siblings (if any)
+    $page_siblings = get_pages('child_of=' . $parent_page . '&exclude=' . $current_page);
+    // Check if page has siblings
+    $has_siblings = count($page_siblings) !=0;
+
+    // If page has children assign $pages to children
+    // otherwise get the siblings instead
+    if($has_children) {
+        $child_of = $current_page;
+    } else {
+        $child_of = $parent_page;
+    }
+
+    // Arguements for wp_list_pages
+    $args = array(
+        'title_li' => '',
+        'depth' => 1,
+        'child_of' => $child_of,
+        'exclude' => $current_page
+    );
+
+    // Output unordered list of children or siblings, if present,
+    // with designated class name for list
+    if($has_children || $has_siblings) {
+        echo '<ul class="' . $class . '">';
+        wp_list_pages($args);
+        echo '</ul>';
+    }
+
+}
