@@ -15,3 +15,17 @@ function default_media_options() {
 }
 
 add_action('after_setup_theme', 'default_media_options');
+
+/**
+ * Retrieve the posts image as a url
+ * @param  string $size Name of the thumbnail size to return
+ * @return string       URL of image in requested size
+ */
+function get_post_img_url($size = 'full') {
+    global $post;
+
+    $thumb = wp_get_attachment_image_src(get_post_thumbnail_id($post->ID), $size);
+    $url = $thumb['0'];
+
+    return $url;
+}
