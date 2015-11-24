@@ -18,6 +18,8 @@ include_once('lib/editor.php');
 include_once('lib/enqueue-scripts.php');
 include_once('lib/helpers.php');
 include_once('lib/media.php');
+include_once('lib/post-types.php');
+include_once('lib/post-types-helpers.php');
 include_once('lib/shortcut-icons.php');
 include_once('lib/wp-setup.php');
 
