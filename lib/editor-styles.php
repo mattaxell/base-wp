@@ -36,7 +36,7 @@ function mce_before_init($settings) {
             'title' => 'Lead',
             'selector' => 'p',
             'classes' => 'lead'
-        )
+        ),
         array(
             'title' => 'Small Button',
             'selector' => 'a',
