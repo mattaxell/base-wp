@@ -5,7 +5,7 @@
  * @param  Integer $length Number of words to return
  * @return String          The excerpt text
  */
-function get_ax_excerpt( $length ) {
+function custom_excerpt( $length ) {
     $content = get_the_content();
     return wp_trim_words( $content , $length );
 }
@@ -16,8 +16,9 @@ function get_ax_excerpt( $length ) {
  * @return String $str     The post's first paragraph
  */
 
-function get_first_para($content){
-    $str = wpautop( $content );
+function get_first_para() {
+    $content = get_the_content();
+    $str = wpautop($content);
     $str = substr( $str, 0, strpos( $str, '</p>' ) + 4 );
 
     return trim($str);
@@ -29,11 +30,12 @@ function get_first_para($content){
  * @return String $str     The formatted paragraph
  */
 
-function first_para($content, $class = "post__excerpt"){
+function first_para(){
+    $content = get_the_content();
     $first_para = get_first_para($content);
-    $str = strip_tags($first_para, '<a><strong><em>');
+    $str = strip_tags($first_para, '<em>');
 
-    return '<p class=' . $class . '>' . $str . '</p>';
+    return $str;
 }
 
 /**
