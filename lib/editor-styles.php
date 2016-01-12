@@ -6,10 +6,10 @@
  */
 function custom_editor_styles() {
     // Use font from Google Fonts
-    // $font_url = str_replace(',', '%2C', '//fonts.googleapis.com/css?family=Source+Sans+Pro:400,600,400italic,600italic');
+    // $font_url = str_replace(',', '%2C', '//fonts.googleapis.com/css?family=Merriweather:400,700,700italic,400italic|Source+Sans+Pro:400,400italic,600,600italic');
 
     // add_editor_style($font_url);
-    add_editor_style('public/styles/editor.css');
+    add_editor_style('assets/css/editor.min.css');
 }
 
 add_action( 'admin_init', 'custom_editor_styles' );
@@ -36,11 +36,16 @@ function mce_before_init($settings) {
             'title' => 'Lead',
             'selector' => 'p',
             'classes' => 'lead'
+        )
+        array(
+            'title' => 'Small Button',
+            'selector' => 'a',
+            'classes' => 'button--small'
         ),
         array(
-            'title' => 'Button',
+            'title' => 'Large Button',
             'selector' => 'a',
-            'classes' => 'button'
+            'classes' => 'button--large'
         ),
         array(
             'title' => 'Button Primary',
