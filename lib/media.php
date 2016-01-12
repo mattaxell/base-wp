@@ -17,6 +17,15 @@ function default_media_options() {
 add_action('after_setup_theme', 'default_media_options');
 
 /**
+ * Add all necessary image sizes
+ */
+if(function_exists('add_image_size')) {
+    add_image_size('square-large', 800, 800, true);
+    add_image_size('square', 400, 400, true);
+    add_image_size('avatar', 150, 150, true);
+}
+
+/**
  * Retrieve the posts image as a url
  * @param  string $size Name of the thumbnail size to return
  * @return string       URL of image in requested size
