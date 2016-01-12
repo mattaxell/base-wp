@@ -4,7 +4,8 @@
     * ======================
     * Template used for all pages with standard content
     */
-   get_header();
+    the_post();
+    get_header();
 ?>
 
 <?php get_footer(); ?>

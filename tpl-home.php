@@ -4,7 +4,8 @@
     * ========================
     * Template used for custom home page
     */
-   get_header();
+    the_post();
+    get_header();
 ?>
 
 <?php get_footer(); ?>

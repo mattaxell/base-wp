@@ -4,7 +4,7 @@
     * =================
     * Template used when content cannot be found
     */
-   get_header();
+    get_header();
 ?>
 
 <!--

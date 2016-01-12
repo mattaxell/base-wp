@@ -4,8 +4,8 @@
     * ====================
     * Template used to display a single blog post and it's content
     */
-   get_header();
-   the_post();
+    the_post();
+    get_header();
 ?>
 
 <?php get_footer(); ?>
