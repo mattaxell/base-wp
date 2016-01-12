@@ -27,7 +27,7 @@ function wp_theme_setup() {
     remove_filter( 'the_content_feed', 'wp_staticize_emoji' );
     remove_filter( 'comment_text_rss', 'wp_staticize_emoji' );
     // Remove emojis from TinyMCE
-    add_filter( 'tiny_mce_plugins', 'disable_emojicons_tinymce' );
+    // add_filter( 'tiny_mce_plugins', 'disable_emojicons_tinymce' );
 }
 add_action('after_setup_theme', 'wp_theme_setup');
 
