@@ -4,7 +4,7 @@
 * Set local directory to save JSON files to
 */
 function acf_local_save_dir($path) {
-    $path = get_stylesheet_directory() . '/app/acf/fields';
+    $path = get_stylesheet_directory() . '/lib/acf/fields';
     return $path;
 }
 
@@ -15,7 +15,7 @@ add_filter('acf/settings/save_json', 'acf_local_save_dir');
  */
 function acf_local_local_dir( $paths ) {
     unset($paths[0]);
-    $paths[] = get_stylesheet_directory() . '/app/acf/fields';
+    $paths[] = get_stylesheet_directory() . '/lib/acf/fields';
     return $paths;
 }
 
