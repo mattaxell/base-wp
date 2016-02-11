@@ -74,7 +74,7 @@ function clean_nav_menu($location) {
  * @param  string $location Name of the menu
  * @return string           List of anchor tags
  */
-function menu_item_links($location) {
+function menu_item_links($location, $list_items = true) {
     if(($locations = get_nav_menu_locations()) && isset($locations[$location])) {
         $menu = wp_get_nav_menu_object($locations[$location]);
         $menu_items = wp_get_nav_menu_items($menu->term_id);
@@ -82,7 +82,9 @@ function menu_item_links($location) {
         foreach((array) $menu_items as $key => $menu_item) {
             $url = $menu_item->url;
             $title = $menu_item->title;
+            if($list_items) { echo '<li>'; }
             echo '<a href="'. $url .'">'. $title .'</a>' ."\n";
+            if($list_items) { echo '</li>'; }
         }
     }
 }
