@@ -43,6 +43,7 @@ function section_navigation($class = 'section-nav') {
     // with designated class name for list
     if($has_children || $has_siblings) {
         echo '<ul class="' . $class . '">';
+        if($parent_page) { echo '<li class="' . $class . '__parent"><a href="' . get_permalink($parent_page) . '">' . get_the_title($parent_page) . '</a></li>'; }
         wp_list_pages($args);
         echo '</ul>';
     }
