@@ -19,3 +19,15 @@ function queue_scripts() {
 if (!is_admin()) {
     add_action('wp_enqueue_scripts', 'queue_scripts', 11);
 }
+
+/**
+ * Prevent wp-embed script
+ * unless on single blog post, where it might be useful
+ */
+function no_wp_embed() {
+    if(!is_singular()) {
+        wp_dequeue_script('wp-embed');
+    }
+}
+
+add_action('wp_footer', 'no_wp_embed');
