@@ -13,6 +13,7 @@ include_once('lib/analytics.php');
 include_once('lib/clean-nav.php');
 include_once('lib/custom-login.php');
 include_once('lib/custom-excerpts.php');
+include_once('lib/disable-rest-api.php');
 include_once('lib/editor-styles.php');
 include_once('lib/enqueue-scripts.php');
 include_once('lib/helpers.php');
