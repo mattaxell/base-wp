@@ -1,43 +1,25 @@
 <?php
-/**
- * Remove unused WP Menu items
- * ===========================
- * Comments hidden from menu by default
- * Hide additional items with remove_menu_page()
- */
-function remove_menu_pages() {
-    remove_menu_page('edit-comments.php');
-    // remove_menu_page('upload.php');
-}
-add_action( 'admin_menu', 'remove_menu_pages' );
-
 
 /**
- * Re-arrange order of admin menu
+ * Clean up admin bar
  */
-function custom_menu_order($menu_ord) {
-    if (!$menu_ord) return true;
+function annointed_admin_bar_remove() {
+    global $wp_admin_bar;
 
-    return array(
-        'index.php', // Dashboard
-        'separator1', // First separator
-        'edit.php', // Posts
-        'edit.php?post_type=page', // Pages
-        'edit-comments.php', // Comments
-        'separator2', // Second separator
-        'upload.php', // Media
-        'themes.php', // Appearance
-        'plugins.php', // Plugins
-        'separator3', // Third separator
-        'users.php', // Users
-        'tools.php', // Tools
-        'options-general.php', // Settings
-        'separator-last', // Last separator
+    /* Remove their stuff */
+    $wp_admin_bar->remove_menu('wp-logo');
+    $wp_admin_bar->remove_menu('comments');
+
+    // Remove 'How are you <user>? text'
+    $user_id = get_current_user_id();
+    $avatar = get_avatar( $user_id, 16 );
+    $wp_admin_bar->add_menu( array(
+        'id' => 'my-account',
+        'title' => ' ' . $avatar )
     );
-
 }
-add_filter('custom_menu_order', 'custom_menu_order'); // Activate custom_menu_order
-add_filter('menu_order', 'custom_menu_order');
+
+add_action('wp_before_admin_bar_render', 'annointed_admin_bar_remove', 0);
 
 /**
  * Update name of posts in admin menu
