@@ -29,4 +29,4 @@ function site_shortcut_icons() {
     echo '<link rel="apple-touch-icon" sizes="180x180" href="' . $path . '-180.png">' . "\n";
 }
 
-add_action('wp_head', 'site_shortcut_icons');
+// add_action('wp_head', 'site_shortcut_icons');
