@@ -41,6 +41,17 @@ function current_user_role_is($roles) {
 }
 
 /**
+ * Get various info from general
+ * company options page
+ * @param  str $type Info to retrieve
+ * @return mixed     The field, mainly text fields
+ */
+function company_info($type) {
+    $type = 'company_' . $type;
+    return get_field($type, 'option');
+}
+
+/**
  * List the terms of a post from a specific taxonomy
  * @param  integer $id  The ID of the post
  * @param  string  $tax Name of the taxonomy to grab the terms of
