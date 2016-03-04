@@ -36,11 +36,16 @@ if(function_exists('acf_add_options_page')) {
         'position'      => '4'
     ));
 
-    // Sub Pages
-    // acf_add_options_sub_page(array(
-    //     'page_title'  => 'General Info',
-    //     'menu_title'  => 'General Info',
-    //     'parent_slug' => 'site-options'
-    // ));
+    //Sub Pages
+    acf_add_options_sub_page(array(
+        'page_title'  => 'General Info',
+        'menu_title'  => 'General Info',
+        'parent_slug' => 'site-options'
+    ));
+    acf_add_options_sub_page(array(
+        'page_title'  => 'Analytics',
+        'menu_title'  => 'Analytics',
+        'parent_slug' => 'site-options'
+    ));
 
 }
