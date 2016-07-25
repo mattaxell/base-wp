@@ -8,7 +8,7 @@
  */
 function analytics_tracking_code() {
     if(get_field('google_analytics', 'option') && !current_user_role_is('administrator', 'editor')) {
-        echo get_field('ga_tracking_code', 'options');
+        echo get_field('google_analytics', 'option');
     }
 }
 
